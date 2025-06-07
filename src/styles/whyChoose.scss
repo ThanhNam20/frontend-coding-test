@@ -1,0 +1,93 @@
+@import './variables';
+
+.whyChoose {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 10rem;
+    background: url('../../public/images/banner3.png') no-repeat center/cover;
+    height: 600px;
+
+    &__content {
+        h2 {
+            font-size: $text-7xl;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            line-height: 0.9;
+        }
+
+        &__logo {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            height: 60px;
+        }
+    }
+    &__text {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        &__title {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        p {
+            font-size: $text-xl;
+            color: #1f2937;
+            font-weight: 400;
+        }
+    }
+
+    @media (max-width: 1024px) {
+        padding: 2rem 4rem;
+        flex-direction: column;
+        height: auto;
+        text-align: center;
+
+        &__content {
+            h2 {
+                font-size: $text-5xl;
+                line-height: 0.9;
+            }
+        }
+
+        &__text {
+            align-items: center;
+
+            p {
+                font-size: $text-lg;
+            }
+        }
+    }
+
+    @media (max-width: 640px) {
+        padding: 2rem;
+        &__content {
+            h2 {
+                font-size: $text-2xl;
+                font-weight: 500;
+                text-align: left;
+            }
+            &__logo {
+                height: 50px;
+                position: relative;
+                left: -50%;
+                transform: translateX(50%);
+                width: 45%;
+            }
+        }
+
+        &__text {
+            max-width: 80%;
+            gap: 1rem;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            p {
+                font-size: $text-base;
+                text-align: left;
+            }
+        }
+    }
+}

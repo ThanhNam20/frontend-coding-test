@@ -1,0 +1,82 @@
+@import './variables';
+
+.looking {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 2rem;
+    border-radius: $border-radius;
+
+    &__container {
+        background: url('../../public/images/mask-group.png') no-repeat
+            center/cover;
+        text-align: center;
+        padding: 4rem;
+        border-radius: $border-radius;
+        width: 846px;
+
+        h2 {
+            font-size: $text-6xl;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            color: #ccc;
+            margin-bottom: 2rem;
+            font-size: $text-lg;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            background: #fff;
+            color: $primary-color;
+            font-weight: 600;
+            border: none;
+            border-radius: $border-radius;
+            font-size: $text-lg;
+            cursor: pointer;
+        }
+    }
+
+    @media (max-width: 768px) {
+        &__container {
+            padding: 2rem;
+            width: 100%;
+
+            h2 {
+                font-size: $text-4xl;
+            }
+
+            p {
+                font-size: $text-base;
+            }
+
+            .btn {
+                font-size: $text-sm;
+                padding: 0.75rem 1.5rem;
+            }
+        }
+    }
+
+    @media (max-width: 480px) {
+        padding: 4rem 2rem 1.5rem;
+
+        &__container {
+            padding: 2rem;
+
+            h2 {
+                font-size: $text-2xl;
+            }
+
+            p {
+                font-size: $text-xs;
+            }
+
+            .btn {
+                font-size: $text-xs;
+                padding: 0.75rem 1.25rem;
+            }
+        }
+    }
+}

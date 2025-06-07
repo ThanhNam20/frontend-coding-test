@@ -1,0 +1,128 @@
+@import './variables';
+
+.models {
+    padding: 4rem 6rem;
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h2 {
+            font-size: $text-4xl;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .models__view-all {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: $button-color-light;
+            border-radius: $border-radius;
+            padding: 0.5rem 1rem;
+        }
+    }
+
+    &__scroll {
+        display: flex;
+        gap: 1.5rem;
+        overflow-x: auto;
+        padding-bottom: 1rem;
+        margin-top: 1rem;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    .model-card {
+        min-width: 287px;
+        background: #fff;
+        border-radius: $border-radius;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+        &__image {
+            width: 100%;
+            height: 360px;
+            object-fit: cover;
+            display: block;
+        }
+
+        &__info {
+            padding: 0.75rem 1rem;
+
+            h3 {
+                margin: 0;
+                font-size: $text-lg;
+                color: $primary-color;
+                font-weight: 700;
+            }
+
+            p {
+                margin: 0.25rem 0 0;
+                color: $text-light;
+                font-size: $text-sm;
+            }
+        }
+    }
+
+    // Tablet
+    @media (max-width: 768px) {
+        padding: 2rem;
+
+        &__header {
+            h2 {
+                font-size: $text-3xl;
+            }
+
+            .models__view-all {
+                background-color: transparent;
+                padding: 0;
+                border: none;
+
+                span,
+                p {
+                    display: none;
+                }
+            }
+        }
+
+        .model-card {
+            min-width: 240px;
+
+            &__image {
+                height: 300px;
+            }
+        }
+    }
+
+    // Mobile
+    @media (max-width: 480px) {
+        padding: 2rem 1rem;
+
+        &__header {
+            h2 {
+                font-size: $text-2xl;
+            }
+
+            .models__view-all {
+                span,
+                p {
+                    display: none;
+                }
+            }
+        }
+
+        .model-card {
+            min-width: 200px;
+
+            &__image {
+                height: 260px;
+            }
+        }
+    }
+}

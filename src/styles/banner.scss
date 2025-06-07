@@ -1,0 +1,96 @@
+// styles/hero.scss
+@import './variables';
+
+.banner {
+    display: flex;
+    padding: 4rem 2rem;
+    background: url('../../public/images/banner1.png') no-repeat center/cover;
+    height: 645px;
+
+    &__image {
+        width: 40%;
+    }
+
+    &__text {
+        flex: 1;
+        position: relative;
+        top: 80px;
+
+        h1 {
+            font-size: $text-5xl;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+
+            span {
+                color: $primary-color;
+                font-weight: 700;
+            }
+        }
+
+        p {
+            color: $text-light;
+            font-size: $text-2xl;
+            margin-bottom: 2rem;
+            max-width: 70%;
+            line-height: 1.5;
+        }
+
+        .btn {
+            padding: 1.5rem 2rem;
+            background-color: $button-color;
+            color: #fff;
+            border: none;
+            border-radius: $border-radius;
+            font-size: $text-lg;
+            cursor: pointer;
+        }
+    }
+
+    @media (max-width: 1024px) {
+        flex-direction: column;
+        height: auto;
+        padding: 3rem 2rem;
+        width: 80%;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 10px;
+
+        &__image {
+            width: 100%;
+            text-align: center;
+        }
+
+        &__text {
+            top: 0;
+            left: 160px;
+            p {
+                max-width: 100%;
+                font-size: $text-lg;
+                width: 60%;
+            }
+        }
+    }
+
+    @media (max-width: 640px) {
+        padding: 2rem 1rem;
+
+        &__text {
+            left: 35%;
+            h1 {
+                font-size: $text-xl;
+                margin-bottom: 2px;
+            }
+
+            p {
+                font-size: $text-xs;
+                margin-bottom: 8px;
+            }
+
+            .btn {
+                padding: 1rem 1.5rem;
+                font-size: $text-xs;
+            }
+        }
+    }
+}

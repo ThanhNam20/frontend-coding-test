@@ -1,0 +1,138 @@
+// styles/footer.scss
+@import './variables';
+
+.footer {
+    background-color: $button-color-light;
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+        padding: 3rem 6rem;
+    }
+
+    &__company {
+        font-weight: 700;
+        font-size: $text-sm;
+    }
+
+    a {
+        display: block;
+        margin: 0.5rem 0;
+        text-decoration: none;
+        color: $primary-color;
+        font-size: $text-sm;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__heading {
+        font-weight: 600;
+        color: $primary-color;
+        opacity: 0.6;
+        margin-bottom: 0.6rem;
+    }
+
+    &__icons img {
+        height: 24px;
+        margin-right: 0.75rem;
+        cursor: pointer;
+    }
+
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid #ddd;
+        padding: 1.25rem 6rem;
+    }
+
+    &__copy {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        &__icon {
+            height: 36px;
+        }
+
+        span {
+            font-size: $text-sm;
+            color: $primary-color;
+        }
+    }
+
+    &__lang-btn {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem;
+        border: 1px solid $primary-color;
+        border-radius: $border-radius;
+        background: none;
+        cursor: pointer;
+
+        p {
+            font-size: $text-sm;
+            color: $primary-color;
+            margin: 0;
+        }
+    }
+
+    @media (max-width: 768px) {
+        &__grid {
+            grid-template-columns: 1fr;
+            padding: 2rem;
+        }
+
+        &__bottom {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem 2rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        &__lang-btn {
+            padding: 0.4rem 0.75rem;
+            border: none;
+            p {
+                font-size: $text-sm;
+                font-weight: 700;
+            }
+        }
+
+        &__copy span {
+            font-size: $text-sm;
+        }
+
+        &__logo {
+            &__image {
+                margin-bottom: 10px;
+            }
+            button {
+                margin-top: 4px;
+                background-color: $button-color-light;
+                border: 1px solid $primary-color;
+                border-radius: $border-radius;
+                padding: 1rem 1.5rem;
+                font-size: $text-sm;
+                font-weight: 600;
+                cursor: pointer;
+                width: 30%;
+            }
+        }
+
+        &__bottom {
+            padding: 0;
+            border-top: 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+}

@@ -1,0 +1,57 @@
+@import './variables';
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 5rem;
+
+    &__logo {
+        img {
+            height: 28px;
+            width: 106px;
+        }
+    }
+
+    &__nav {
+        display: flex;
+        gap: 3rem;
+
+        a {
+            text-decoration: none;
+            color: $primary-color;
+            font-weight: 500;
+            font-size: $text-sm;
+        }
+
+        .dropdown {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+    }
+
+    &__cta {
+        background-color: $button-color;
+        color: #fff;
+        padding: 0.75rem 1rem;
+        border: none;
+        border-radius: $border-radius;
+        cursor: pointer;
+        font-weight: 500;
+    }
+
+    // Responsive: Tablet & Mobile
+    @media (max-width: 768px) {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        background-color: transparent;
+        padding: 1.5rem 2rem;
+
+        &__nav,
+        &__cta {
+            display: none;
+        }
+    }
+}
